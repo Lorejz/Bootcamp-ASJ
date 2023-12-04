@@ -31,17 +31,190 @@
    // alert("Comere "+snackQueComere+" "+snackFavorito+" antes de morir")
  
  // Ejercicio 2
- var cantDiasVacas = 15;
- var presupuestoVacas = 150000;
- var comida = 30;
- var presupuestoXcomida = presupuestoVacas/(cantDiasVacas*comida)
+ //var cantDiasVacas = 15;
+ //var presupuestoVacas = 150000;
+ //var comida = 30;
+ //var presupuestoXcomida = presupuestoVacas/(cantDiasVacas*comida)
 
- alert("Podés gastar "+presupuestoXcomida+" pesos en cada comida para que te alcance la plata durante los "+cantDiasVacas+" días de viaje.");
- 
+// alert("Podés gastar "+presupuestoXcomida+" pesos en cada comida para que te alcance la plata durante los "+cantDiasVacas+" días de viaje.");
+
+//let edad = 20;
+
+// Evaluación condicional
+//if (edad >= 18) {
+  // Código a ejecutar si la condición es verdadera
+//  console.log("Eres mayor de edad");
+//} else {
+  // Código a ejecutar si la condición es falsa
+//  console.log("Eres menor de edad");
+//}
+
+//let num = parseInt( prompt("ingrese un numero"));
 
 
+//switch(num % 2){
+//  case 0:
+//    alert(num + " es un número par.");
+  //  break;
+
+  //case 1:
+   // alert(num + " es un número impar.");
+    //break;
+
+  //default:
+   // alert("Ingrese un valor correcto")
+    //break;
+
+//}
+
+/*
+let inputWord = prompt("ingrese una palabra de las establecidas");
+
+switch(inputWord){
+  case 'casa': 
+    alert("house")
+    break;
+
+  case 'perro':
+    alert("dog")
+    break;
+
+  case 'pelota':
+    alert("ball")
+    break;
+
+  case 'arbol':
+    alert("tree")
+    break;
+
+  case 'genio':
+    alert("smarter")
+    break;
+
+  default:
+    alert("Ingrese una palabra de las establecidas por favor")
+}
+
+*/
+/*
+let inputWord = prompt("ingrese una valoracion para la pelicula, 'Muy Mala','Mala','Mediocre','Buena','Muy Buena'");
+
+switch(inputWord){
+  case 'Muy Mala': 
+    alert("Calificaste la pelicula "+inputWord+" te pedimos disculpas")
+    break;
+
+  case 'mala':
+    alert("Calificaste la pelicula "+inputWord+" te pedimos disculpas")
+    break;
+
+  case 'Mediocre':
+    alert("Calificaste la pelicula "+inputWord+" te pedimos disculpas")
+    break;
+
+  case 'Buena':
+    alert("Calificaste la pelicula "+inputWord+" muchas gracias")
+    break;
+
+  case 'Muy Buena':
+    alert("Calificaste la pelicula "+inputWord+" muchas gracias")
+    break;
+
+  default:
+    alert("Ingrese una palabra de las establecidas por favor o valide mayus")
+}
+
+alert("Muchas gracias por valorar el sitio.")
+*/
+
+/*
+while(condicion){
+  //mientras se cumpla la condicion se repite
+}
+*/
+
+/*
+let num = 1;
+
+while(num <= 5){
+  console.log(num);
+  num++;
+}
+*/
+/*
+let num = parseInt( prompt("ingrese un numero"));
+
+let numInicio = num;
+
+let acum = 0;
+
+while(numInicio >= num){
+  acum = acum + numInicio;
+  numInicio--;
+}
+
+let promedio = (acum / num);
+
+alert("el promedio es"+promedio)
+alert(acum)
+
+*/
+
+/*
+let num = parseInt(prompt("Ingrese un número"));
+let numInicio = 1;
+let acum = 0; 
+
+  if (num > 0 ) {
+
+  while (numInicio <= num) {
+    acum = acum + numInicio; 
+    numInicio++;
+  }
+
+  let promedio = acum / num;
 
 
+  alert("La suma de los números hasta " + num + " es " + acum + " y el promedio es " + promedio);
+
+  } else {
+    alert("Ingrese un valor positivo")
+}
+*/
+
+/*
+let contadorPositivos = 0;
+
+while (true) {
+  let numero = parseInt(prompt("Ingrese un número entero (ingrese un número negativo para salir o cero):"));
+
+  if (numero <= 0) {
+    break; 
+  }
+
+  if (numero > 0) {
+    contadorPositivos++; 
+  }
+
+}
+
+alert("Ha ingresado " +contadorPositivos+ " número(s) positivo(s)");
+
+*/
+
+
+/*
+OPERADORES DE COMPARACION
+
+< > >= <= == != 
+
+OPERADORES LOGICOS
+
+&& ---> AND
+|| ---> OR
+!  ---> NOT
+
+*/
 
 
 

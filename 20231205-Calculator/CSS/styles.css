@@ -1,0 +1,40 @@
+
+input{
+    display: flex;
+    
+}
+
+.container{
+    display:grid;
+    grid-template-columns: 270px auto auto auto 200px;
+    gap: 10px;
+    background-color: grey;
+}
+
+.containerItem{
+    font-size: 18px;
+    padding: 30px;
+    margin: 10px;
+}
+
+button{
+    height: 100px;
+    width: 100px;
+    font-size: larger;
+}
+
+input{
+    height: 100px;
+    margin-top: 20px;
+    margin-left: 40px;
+    width: 800px;
+    font-size: larger;
+}
+
+.igual{
+
+    margin-top: 20px;
+    margin-left: 600px;
+
+    font-size: larger;
+}

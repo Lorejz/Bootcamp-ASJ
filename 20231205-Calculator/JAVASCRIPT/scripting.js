@@ -1,153 +1,125 @@
 
+let operando;
+let operador= "";
 
-
-//boton1
-let boton1 = document.getElementById("btn_1");
-
-boton1.addEventListener("click", function () {
-    let display = document.getElementById("display");
-    display.value += 1;
-});
-
-//boton2
-let boton2 = document.getElementById("btn_2");
-
-boton2.addEventListener("click", function () {
-    let display = document.getElementById("display");
-    display.value += 2;
-});
-
-
-//boton3
-let boton3 = document.getElementById("btn_3");
-
-boton3.addEventListener("click", function () {
-    let display = document.getElementById("display");
-    display.value += 3;
-});
-
-//boton4
-let boton4 = document.getElementById("btn_4");
-
-boton4.addEventListener("click", function () {
-    let display = document.getElementById("display");
-    display.value += 4;
-});
-
-//boton5
-let boton5 = document.getElementById("btn_5");
-
-boton5.addEventListener("click", function () {
-    let display = document.getElementById("display");
-    display.value += 5;
-});
-
-//boton6
-let boton6 = document.getElementById("btn_6");
-
-boton6.addEventListener("click", function () {
-    let display = document.getElementById("display");
-    display.value += 6;
-});
-
-//boton7
-let boton7 = document.getElementById("btn_7");
-
-boton7.addEventListener("click", function () {
-    let display = document.getElementById("display");
-    display.value += 7;
-});
-
-//boton8
-let boton8 = document.getElementById("btn_8");
-
-boton8.addEventListener("click", function () {
-    let display = document.getElementById("display");
-    display.value += 8;
-});
-
-//boton9
-let boton9 = document.getElementById("btn_9");
-
-boton9.addEventListener("click", function () {
-    let display = document.getElementById("display");
-    display.value += 9;
-});
-
-//boton0
-let boton0 = document.getElementById("btn_0");
-
-boton0.addEventListener("click", function () {
-    let display = document.getElementById("display");
-    display.value += 0;
-});
-
-
+//numeros
 let display = document.getElementById("display");
+
+let uno = document.getElementById("uno");
+let dos = document.getElementById("dos");
+let tres = document.getElementById("tres");
+let cuatro = document.getElementById("cuatro");
+let cinco = document.getElementById("cinco");
+let seis = document.getElementById("seis");
+let siete = document.getElementById("siete");
+let ocho = document.getElementById("ocho");
+let nueve = document.getElementById("nueve");
+let cero = document.getElementById("cero");
+
 //Operadores
+let suma = document.getElementById("suma");
+let resta = document.getElementById("resta");
+let multiplicacion = document.getElementById("multiplicacion");
+let division = document.getElementById("division");
 
-let botonesOperador = document.querySelectorAll('.operador');
+let limpiar = document.getElementById("limpiar");
+let igual = document.getElementById("igual")
 
-botonesOperador.forEach(function(boton) {
-    boton.addEventListener('click', function() {
-        
-        let operadorClickeado = this.id;
-        
-        switch (operadorClickeado) {
-            case "resultado":
-                if(operadorUsado="suma"){
-                    display.value = display.value + auxiliarDisplay; 
+
+uno.addEventListener("click", function(){
+    display.value = display.value + 1;
+})
+dos.addEventListener("click", function(){
+    display.value = display.value + 2;
+})
+tres.addEventListener("click", function(){
+    display.value = display.value + 3;
+})
+cuatro.addEventListener("click", function(){
+    display.value = display.value + 4;
+})
+cinco.addEventListener("click", function(){
+    display.value = display.value + 5;
+})
+seis.addEventListener("click", function(){
+    display.value = display.value + 6;
+})
+siete.addEventListener("click", function(){
+    display.value = display.value + 7;
+})
+ocho.addEventListener("click", function(){
+    display.value = display.value + 8;
+})
+nueve.addEventListener("click", function(){
+    display.value = display.value + 9;
+})
+cero.addEventListener("click", function(){
+    display.value = display.value + 0;
+})
+
+
+suma.addEventListener("click", function(){
+    operando = display.value;
+    display.value = null;
+    operador = "+"
+})
+
+resta.addEventListener("click", function(){
+    operando = display.value;
+    display.value = null;
+    operador = "-"
+})
+
+multiplicacion.addEventListener("click", function(){
+    operando = display.value;
+    display.value = null;
+    operador = "*"
+})
+
+division.addEventListener("click", function(){
+    operando = display.value;
+    display.value = null;
+    operador = "/"
+})
+
+igual.addEventListener("click", function(){
+    resolver(operador);
+})
+
+limpiar.addEventListener("click", function(){
+    ce();
+})
+
+function resolver (){
+    if(!isNaN(operando) && !isNaN(display.value)){
+        switch(operador){
+            case "+":
+                display.value = parseFloat(operando) + parseFloat(display.value)
+                break;
+            case "-":
+                display.value = parseFloat(operando) - parseFloat(display.value)
+                break;  
+            case "*":
+                display.value = parseFloat(operando) * parseFloat(display.value)
+                break;   
+            case "/":
+                if( parseFloat(display.value) === 0 ){
+                    alert("No se puede divir por cero")
+                }else{
+                    display.value = parseFloat(operando) / parseFloat(display.value)
                 }
                 break;
-
-            case "suma":
-                let operadorUsado = "";
-                let auxiliarDisplay = 0;
-                auxiliarDisplay = display.value;
-                display.value = 0;
-                operadorUsado = "suma";
-
-                break;
-        
-            case "resta":
-
-                break;
-        
-            case "multiplicacion":
-
-                break;
-        
-            case "division":
-  
-                break;
-        
             default:
-                alert("Operador no reconocido");
-
+                alert("operador no conocido");
                 break;
         }
-    });
-});
+    }else{
+        alert("operandos no numericos")
+    }
+}
 
-
-
-
-
-///////////////////////////////////////////////////////////////////////////
-//suma
-let botonSuma = document.getElementById("suma");
-
-botonSuma.addEventListener("click", function () {
-    let display = document.getElementById("display");
-    auxiliarDisplay = display.value;
-    display.value = "";
-});
-
-
-//igual-resultado
-let botonResultado = document.getElementById("equal");
-
-botonResultado.addEventListener("click", function () {
-    let display = document.getElementById("display");
-
-});
+function ce(){
+    display.value = null;
+    operador = null;
+    operando = null;
+}

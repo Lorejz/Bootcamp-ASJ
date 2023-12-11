@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Aprobado por Chuck Norris</h1>
+        <img src="chuck.png" alt="">
+        <br>
+        <button id="actualizar">ACTUALIZAR</button>
+        <br>
+        <h2 id="infoh2"></h2>
+    </div>
+    <script>
+        let infoh2 = document.getElementById("infoh2");
+        let actualizar = document.getElementById("actualizar")
+
+        actualizar.addEventListener("click",()=> {
+            fetch("https://api.chucknorris.io/jokes/random")
+            .then((response)=> response.json())
+            .then((json) => {
+            console.log(json.name);
+            infoh2.innerText = json.value;
+          })
+        })
+
+    </script>
+</body>
+</html>

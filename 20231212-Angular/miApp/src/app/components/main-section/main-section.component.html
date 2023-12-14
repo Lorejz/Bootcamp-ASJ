@@ -1,1 +1,65 @@
-<!-- <input type="text" [{ngModel}]="valor_input" > -->
+<h1 class="mt-2 ">Listado de Tareas</h1>
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Crear Tarea</button>
+<br>
+<div class="btn-group">
+  <button class="btn btn-outline-dark" (click)="cambiarFiltro('todos')">Mostrar Todos</button>
+  <button class="btn btn-outline-dark" (click)="cambiarFiltro('finalizados')">Mostrar Finalizados</button>
+  <button class="btn btn-outline-dark" (click)="cambiarFiltro('eliminados')">Mostrar Eliminados</button>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Crear Tarea</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="titulo-name" class="col-form-label">Titulo:</label>
+            <input name="inputTitulo" type="text" class="form-control" id="titulo-name" [(ngModel)]="tituloInput">
+          </div>
+          <div class="mb-3">
+            <label for="descripcion-text" class="col-form-label">Descripcion:</label>
+            <textarea name="inputDescripcion" class="form-control" id="descripcion-text"
+              [(ngModel)]="descripcionInput"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="agregarTarea()">Crear
+          Tarea</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="row">
+  <div class="col-12 p-3">
+    <table>
+      <thead>
+        <tr>
+          <th>Titulo</th>
+          <th>Descripcion</th>
+          <th>Accion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tarea of tareas; let i = index" [ngClass]="{'fila-eliminada': tarea.eliminado}" [ngClass]="{'fila-finalizado': tarea.finalizado}">
+          <td>{{ tarea.titulo }}</td>
+          <td>{{ tarea.descripcion }}</td>
+          <td class="p-2 ">
+            <button class="btn btn-success" (click)="finalizarTarea(i)">Terminar</button>
+            <button class="btn btn-danger" (click)="eliminarTarea(i)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

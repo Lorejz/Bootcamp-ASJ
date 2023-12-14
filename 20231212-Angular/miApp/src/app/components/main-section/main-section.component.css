@@ -1,0 +1,29 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 7px;
+}
+
+th {
+    background-color: gray;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.fila-eliminada {
+    display: none;
+  }
+
+.fila-finalizado{
+    text-decoration: line-through;
+    background-color: #D3D3D3;
+}

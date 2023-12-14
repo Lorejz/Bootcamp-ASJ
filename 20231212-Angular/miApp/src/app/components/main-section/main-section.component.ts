@@ -11,7 +11,7 @@ export class MainSectionComponent {
   descripcionInput = '';
   tareas: Tarea[] = [];
 
-  filtro: 'todos' | 'finalizados' | 'eliminados' = 'todos';
+  filtro!: string;
 
   agregarTarea(){
 /*     let tarea : Tarea = new Tarea(this.tituloInput,this.descripcionInput);
@@ -26,12 +26,25 @@ export class MainSectionComponent {
   eliminarTarea(index:number){
     this.tareas[index].eliminado=true;
   }
-  finalizarTarea(index:number){
-    this.tareas[index].finalizado=true;
+  terminarTarea(index:number){
+    this.tareas[index].terminado=true;
   }
 
-  cambiarFiltro(filtro: 'todos' | 'finalizados' | 'eliminados') {
-    
+  cambiarFiltro() {
+    switch(this.filtro){
+      case 'eliminados':
+        const eliminados = this.tareas.filter( (tarea) => tarea.eliminado );
+        return eliminados;
+      case 'terminados':
+        const terminados = this.tareas.filter( (tarea) => tarea.terminado );
+        return terminados;
+      default:
+        return this.tareas;
+    }
+  }
+
+  setearFiltro(filtro:string){
+    this.filtro = filtro;
   }
 
 
@@ -43,13 +56,13 @@ class Tarea {
 
   titulo: string;
   descripcion: string;
-  finalizado: boolean;
+  terminado: boolean;
   eliminado:  boolean;
 
   constructor(titulo: string,descripcion: string){
     this.titulo = titulo;
     this.descripcion = descripcion;
-    this.finalizado = false;
+    this.terminado = false;
     this.eliminado = false;
   };
 

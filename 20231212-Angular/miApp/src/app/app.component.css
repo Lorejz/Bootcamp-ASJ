@@ -1,0 +1,25 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  .container {
+    display: flex;
+    height: 100vh; /* 100% de la altura de la ventana */
+  }
+  
+  .sidebar {
+    width: 30%;
+    background-color: #333; /* Color de fondo de la barra lateral */
+    color: white; /* Color del texto en la barra lateral */
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .main-section {
+    flex: 70%; /* La sección principal ocupa el espacio restante */
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f4f4f4; /* Color de fondo de la sección principal */
+  }

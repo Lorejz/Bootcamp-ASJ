@@ -3,9 +3,9 @@
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Crear Tarea</button>
 <br>
 <div class="btn-group">
-  <button class="btn btn-outline-dark" (click)="cambiarFiltro('todos')">Mostrar Todos</button>
-  <button class="btn btn-outline-dark" (click)="cambiarFiltro('finalizados')">Mostrar Finalizados</button>
-  <button class="btn btn-outline-dark" (click)="cambiarFiltro('eliminados')">Mostrar Eliminados</button>
+  <button class="btn btn-outline-dark" (click)="setearFiltro('todos')">Mostrar Todos</button>
+  <button class="btn btn-outline-dark" (click)="setearFiltro('terminados')">Mostrar Terminados</button>
+  <button class="btn btn-outline-dark" (click)="setearFiltro('eliminados')">Mostrar Eliminados</button>
 </div>
 
 
@@ -51,11 +51,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let tarea of tareas; let i = index" [ngClass]="{'fila-eliminada': tarea.eliminado}" [ngClass]="{'fila-finalizado': tarea.finalizado}">
+        <tr *ngFor="let tarea of cambiarFiltro(); let i = index">
           <td>{{ tarea.titulo }}</td>
           <td>{{ tarea.descripcion }}</td>
           <td class="p-2 ">
-            <button class="btn btn-success" (click)="finalizarTarea(i)">Terminar</button>
+            <button class="btn btn-success" (click)="terminarTarea(i)">Terminar</button>
             <button class="btn btn-danger" (click)="eliminarTarea(i)">Eliminar</button>
           </td>
         </tr>

@@ -9,6 +9,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { MainComponent } from './components/main/main.component';
 import { MainSidebarComponent } from './components/main-sidebar/main-sidebar.component';
 import { MainSectionComponent } from './components/main-section/main-section.component';
+import { MainSectionSimpsonsComponent } from './components/main-section-simpsons/main-section-simpsons.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MainSectionComponent } from './components/main-section/main-section.com
     HeaderComponent,
     MainComponent,
     MainSidebarComponent,
-    MainSectionComponent
+    MainSectionComponent,
+    MainSectionSimpsonsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,16 @@
+<h4>componente padre</h4>
+<!-- si envio un texto, no hace falta [], en vio variable/objeto/array si debo usar []  -->
+<!-- <app-hijo
+  [datoEnviado]="{ nombre: 'Lucas', motivoExp: 'hola' }"
+  ></app-hijo> -->
+
+
+<!-- <app-hijo (mensaje)="recibirMsj($event)" ></app-hijo>
+
+<p>{{ msjContenido }}</p> -->
+
+
+<input type="text" #myInput>
+<button (click)="mostrar(myInput.value)" >Mostrar</button>
+
+<h4>{{ contenidoInput }}</h4>

@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-5  ">
+        <h3>Form. Alta Simpsons</h3>
+
+        <label for="inputImagen" class="p-2 ">Link imagen</label>
+        <input type="text" [(ngModel)]="inputImagen">
+        <br>
+        <label for="inputNombre" class="p-2 ">Nombre</label>
+        <input type="text" [(ngModel)]="inputNombre">
+        <br>
+        <label for="inputNombre" class="p-2 ">Rol</label>
+        <input type="text" [(ngModel)]="inputRol">
+        <br>
+
+        <button class="btn btn-primary p-2" (click)="cargarSimpson()" >Cargar</button>
+    </div>
+    <div class="col-7 ">
+        <table>
+            <thead>
+              <tr>
+                <th>Imagen</th>
+                <th>Nombre</th>
+                <th>Rol</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let simp of simpsons">
+                <td><img src="{{ simp.imagen }}" alt="nocarga" class="object-fit-contain "></td>
+                <td>{{ simp.nombre }}</td>
+                <td>{{ simp.rol }}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>

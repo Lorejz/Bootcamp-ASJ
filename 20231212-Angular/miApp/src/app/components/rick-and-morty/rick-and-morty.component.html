@@ -1,0 +1,31 @@
+
+<div class="col-12 ">
+    <table>
+        <thead>
+          <tr>
+            <th>Imagen</th>
+            <th>Nombre</th>
+            <th>Especie</th>
+            <th>Accion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of personajes.results">
+            <td><img src="{{ p.image }}" alt="nocarga" class="object-fit-contain"></td>
+            <td>{{ p.name }}</td>
+            <td>{{ p.species }}</td>
+            <td class="text-center"><Button class="btn btn-primary text-center ">Ver más</Button></td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+
+<!-- <hr />
+<table>
+  <tr *ngFor="let p of personajes.results">
+    <td><img src="{{ p.image }}" alt="" width="50px" /></td>
+    <td>{{ p.name }}</td>
+    <td>{{ p.species }}</td>
+    <td>{{ p.id }}</td>
+  </tr>
+</table> -->

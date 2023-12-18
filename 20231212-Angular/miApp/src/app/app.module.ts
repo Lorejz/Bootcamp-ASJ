@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common'; 
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
+import { HeaderComponent } from './components/shared/header/header.component';
 import { MainComponent } from './components/main/main.component';
-import { MainSidebarComponent } from './components/main-sidebar/main-sidebar.component';
-import { MainSectionComponent } from './components/main-section/main-section.component';
-import { MainSectionSimpsonsComponent } from './components/main-section-simpsons/main-section-simpsons.component';
+import { MainSidebarComponent } from './components/shared/main-sidebar/main-sidebar.component';
+import { MainSectionComponent } from './components/todoList/main-section/main-section.component';
+import { MainSectionSimpsonsComponent } from './components/simpsons/main-section-simpsons/main-section-simpsons.component';
+import { RickAndMortyComponent } from './components/rick-and-morty/rick-and-morty.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +20,15 @@ import { MainSectionSimpsonsComponent } from './components/main-section-simpsons
     MainComponent,
     MainSidebarComponent,
     MainSectionComponent,
-    MainSectionSimpsonsComponent
+    MainSectionSimpsonsComponent,
+    RickAndMortyComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

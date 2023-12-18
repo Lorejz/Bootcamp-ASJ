@@ -1,0 +1,23 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 7px;
+}
+
+th {
+    background-color: gray;
+}
+
+img {
+    height: 200px;
+    width: 200px;
+/*     height: 4em;
+    width: 4em; */
+    object-fit: cover; 
+  }

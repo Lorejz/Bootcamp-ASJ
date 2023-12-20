@@ -1,0 +1,24 @@
+<p>carrito works!</p>
+<h3>Listado del Carrito</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Imagen</th>
+            <th>Nombre Producto</th>
+            <th>Precio</th>
+            <th>Accion</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of arrayProductos">
+            <td><img src="{{ p.images[0] }}" alt="" width="150px"></td>
+            <td>{{ p.title }}</td>
+            <td>$ {{ p.price }}</td>
+            <td><Button class="btn btn-outline-danger" (click)="delete(p.id)" >Eliminar</Button></td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="text-center ">
+    <button class="btn btn-success text-center ">Comprar</button>
+</div>

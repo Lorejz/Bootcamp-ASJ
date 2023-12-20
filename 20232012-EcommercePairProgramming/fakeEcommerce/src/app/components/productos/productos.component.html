@@ -1,0 +1,15 @@
+<div class="mt-3 ">
+    <h4><strong>Listado de Productos: </strong></h4>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div *ngFor="let p of productos" class="card m-2 " style="width: 18rem;">
+            <img src="{{ p.images[0] }}" (error)="cambiarImagen($event)" class="card-img-top" alt="imagen producto" width="200px" height="200px">
+            <div class="card-body">
+                <h5 class="card-title">{{ p.title }}</h5>
+                <p class="card-text">{{ p.description }}</p>
+                <button class="btn btn-primary" routerLink="product-detail/{{ p.id }}">See more</button>
+            </div>
+        </div>
+    </div>

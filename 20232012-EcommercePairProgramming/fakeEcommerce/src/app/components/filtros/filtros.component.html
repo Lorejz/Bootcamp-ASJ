@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-4">
+        <input type="text" [(ngModel)]="inputPrecioMin"
+            placeholder="Precio Minimo">
+        <input type="text" [(ngModel)]="inputPrecioMax"
+            placeholder="Precio Maximo">
+
+        <br><br>
+        <input class="form-control" type="search" placeholder="Search"
+            aria-label="Search" [(ngModel)]="tituloInput">
+        <button class="btn btn-outline-success"
+            type="submit"
+            (click)="buscar()"
+            routerLink="{{url}}">Search</button>
+        <!--<button class="btn btn-outline-dark"
+            routerLink="all-products/../../0/{{inputPrecioMin}}/{{inputPrecioMax}}">filtrado
+            por precio</button>-->
+    </div>
+</div>

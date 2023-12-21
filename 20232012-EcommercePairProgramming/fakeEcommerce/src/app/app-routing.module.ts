@@ -11,11 +11,18 @@ import { CarritoComponent } from './components/carrito/carrito.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'all-products', pathMatch: 'full' },
-  { path: "all-products",
+  {
+    path: "all-products",
     children: [
       { path: '', component: ProductosComponent },
+      { path: ':titulo/:precio-min/:precio-max', component: ProductosComponent },
+      // { path: 'titulo/:titulo', component: ProductosComponent },
+      // { path: 'precio/:precio', component: ProductosComponent },
+      //
+      //localhost:4200/all-products/zapa/100/0
       { path: 'product-detail/:id', component: ProductoDetalleComponent },
-      ]
+
+    ]
   },
   { path: "categorias/:id", component: CategoriasComponent },
   { path: "carrito", component: CarritoComponent }

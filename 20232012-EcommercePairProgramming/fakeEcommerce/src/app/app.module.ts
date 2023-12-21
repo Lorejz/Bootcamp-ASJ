@@ -13,6 +13,7 @@ import { ProductoDetalleComponent } from './components/producto-detalle/producto
 
 import { ProductosService } from './services/productos.service';
 import { CarritoComponent } from './components/carrito/carrito.component';
+import { FiltrosComponent } from './components/filtros/filtros.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { CarritoComponent } from './components/carrito/carrito.component';
     ProductosComponent,
     CategoriasComponent,
     ProductoDetalleComponent,
-    CarritoComponent
+    CarritoComponent,
+    FiltrosComponent
   ],
   imports: [
     BrowserModule,

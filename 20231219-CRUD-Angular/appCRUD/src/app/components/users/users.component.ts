@@ -66,7 +66,7 @@ export class UsersComponent implements OnInit {
   // Modificar usuario
   update(usuario:any){
     console.log(usuario);
-    this.usersService.datosUsuario= {
+    this.usersService.datosUsuario = {
       id: usuario.id,
       name: usuario.first_name,
       job: 'Astrofisico',

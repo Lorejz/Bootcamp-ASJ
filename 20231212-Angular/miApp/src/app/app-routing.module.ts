@@ -13,13 +13,13 @@ import { RickAndMortyComponent } from './components/rick-and-morty/rick-and-mort
 const routes: Routes = [
    { path: "simpsons", component : MainSectionSimpsonsComponent },
    { path: "todo", component : MainSectionComponent },
-   { path: "rickandmorty", component : RickAndMortyComponent }
+   { path: "rickandmorty", component : RickAndMortyComponent },
 ];
 
 
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), HttpClientModule],
+  imports: [AppComponent ,RouterModule.forRoot(routes), HttpClientModule],
   exports: [RouterModule],
   providers: [ServrickandmortyService]
 })

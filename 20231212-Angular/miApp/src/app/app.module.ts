@@ -12,6 +12,8 @@ import { MainSidebarComponent } from './components/shared/main-sidebar/main-side
 import { MainSectionComponent } from './components/todoList/main-section/main-section.component';
 import { MainSectionSimpsonsComponent } from './components/simpsons/main-section-simpsons/main-section-simpsons.component';
 import { RickAndMortyComponent } from './components/rick-and-morty/rick-and-morty.component';
+import { PipesComponent } from './components/pipes/pipes.component';
+import { PipesExampleComponent } from './components/pipes-example/pipes-example.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { RickAndMortyComponent } from './components/rick-and-morty/rick-and-mort
     MainSidebarComponent,
     MainSectionComponent,
     MainSectionSimpsonsComponent,
-    RickAndMortyComponent
+    RickAndMortyComponent,
+    PipesComponent,
+    PipesExampleComponent
   ],
   imports: [
     BrowserModule,

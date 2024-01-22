@@ -1,0 +1,13 @@
+<div class="m-5  ">
+    <button routerLink="">volver</button>
+    <br>
+    <br>
+    <h3>Crear Tarea</h3>
+    <br>
+    <input type="text" placeholder="ingrese nombre tarea" [(ngModel)]="tarea.nombre">
+    <br>
+    <br>
+    <input type="text" placeholder="ingrese la descripcion" [(ngModel)]="tarea.descripcion" >
+    <br>
+    <button class="btn btn-primary m-2 " (click)="crearTarea()" >Crear</button>
+</div>

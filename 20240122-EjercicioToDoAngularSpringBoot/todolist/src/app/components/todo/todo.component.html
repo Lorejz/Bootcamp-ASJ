@@ -1,0 +1,27 @@
+<h1 class="mt-2 ">Listado de Tareas</h1>
+
+<button class="btn btn-primary" routerLink="./crear-tarea">Crear Tarea</button>
+
+<div class="row">
+  <div class="col-12 p-3">
+    <table class="table ">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Descripcion</th>
+          <th>Accion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tarea of tareas">
+          <td>{{ tarea.nombre }}</td>
+          <td>{{ tarea.descripcion }}</td>
+          <td class="p-2 ">
+            <button  class="btn btn-danger " (click)="eliminarTarea(tarea.id)">Eliminar</button>
+            <button  class="btn btn-warning   m-1" (click)="modificarTarea(tarea.id)">Modificar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

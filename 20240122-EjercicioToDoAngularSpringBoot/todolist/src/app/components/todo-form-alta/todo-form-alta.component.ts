@@ -19,19 +19,22 @@ export class TodoFormAltaComponent implements OnInit {
     estado: true
   }
 
-  id:any = '';
+  id : number | null = null;
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
-      this.id = params.get('id');
+      //this.id = params.get('id');
+      this.id = parseInt(this.route.snapshot.paramMap.get('id')!);
     })
     if(this.id !== null){
-      console.log("hay id")
+      console.log("hay id: "+this.id)
       this.tareasServicio.getTareaById(this.id).subscribe( data =>{
-        console.log(data);
-        this.tarea = data.body;
+        console.log("data: "+JSON.stringify(data));
+        console.dir(data); //para ver el objeto
+        this.tarea = data;
+        console.log("tarea: "+this.tarea)
       })
-      console.log(this.tarea)
+      //console.log(this.tarea)
     }
 
   }
@@ -41,6 +44,12 @@ export class TodoFormAltaComponent implements OnInit {
       console.log("mensaje: "+mensaje)
     })
   }
-
+  modificarTarea(){
+    if(this.id !==null){
+      this.tareasServicio.modificarTarea(this.id,this.tarea).subscribe( mensaje =>{
+        //console.log("mensaje: "+mensaje)
+      } )
+    }
+  }
 
 }

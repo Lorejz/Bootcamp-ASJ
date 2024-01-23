@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6 mt-2  ">
+            <h2>Video: </h2>
+            <h3>{{ video.titulo }}</h3>
+            <div class="col-6 mt-1">
+                <iframe [src]="safeUrl" frameborder="0" width="630px" height="500px" ></iframe>
+            </div>
+        </div>
+        <div class="col-6 pt-5 ">
+            <br>
+            <h3><strong>Categoria: </strong>{{ video.nombre_categoria }}</h3>
+            <p><strong>Descripcion: </strong>{{ video.descripcion }}</p>
+            <br>
+            <p>¿Que te ha parecido el video?</p>
+            <button class="btn btn-success " (click)="incrementarMeGusta(video.id)" ><i class="bi bi-hand-thumbs-up-fill"></i></button>
+            <button class="btn btn-danger ms-2" (click)="incrementarNoMeGusta(video.id)" ><i class="bi bi-hand-thumbs-down-fill"></i></button>
+            <hr>
+            <p><strong>Valoraciones Actuales:</strong></p>
+            <p><i class="bi bi-hand-thumbs-up-fill"></i>: {{ video.cant_megusta }}</p>
+            <p><i class="bi bi-hand-thumbs-down-fill"></i>: {{ video.cant_nomegusta }}</p>
+            <hr>
+            <p><strong>Vistas: </strong>{{ video.cant_vistas }}</p>
+        </div>
+    </div>
+</div>

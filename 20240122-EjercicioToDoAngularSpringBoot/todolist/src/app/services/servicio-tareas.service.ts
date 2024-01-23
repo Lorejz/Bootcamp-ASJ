@@ -17,8 +17,7 @@ export class ServicioTareasService {
   }
 
   public getTareaById(id:number) : Observable<any> {
-    return this.http.get('http://localhost:8080/tareas/'+id,{ observe:'response', responseType:'text' })
-
+    return this.http.get('http://localhost:8080/tareas/'+id)
   }
 
   public crearTarea(tarea:Tareas): Observable<any>{
@@ -26,16 +25,15 @@ export class ServicioTareasService {
   }
 
   public eliminarTarea( id: number) : Observable<any>{
-    return this.http.delete("http://localhost:8080/tareas/"+id,{ observe:'response', responseType:'text' })
+    return this.http.delete("http://localhost:8080/tareas/"+id, { observe:'response', responseType:'text' })
   }
 
+public modificarTarea(id:number,tarea:Tareas) : Observable<any> {
+  return this.http.put("http://localhost:8080/tareas/"+id,tarea)
+}
 
 
 
-
-  public terminarTarea(id : number, tarea : Tareas) : Observable<any> {
-    return this.http.put('http://localhost:8080/tareas/'+id,tarea);
-  }
 
 
 
